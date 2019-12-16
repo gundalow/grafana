@@ -10,7 +10,7 @@ tags:
   - monitoring
   - grafana
 dependencies: {}
-repository: git@github.com:gundalow-collection-migration/grafana.git
+repository: git@github.com:ansible-collections/grafana.git
 documentation: null
 homepage: null
 issues: null
