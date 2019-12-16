@@ -51,7 +51,7 @@ options:
     type: str
     choices: ["present", "absent"]
 extends_documentation_fragment:
-- ansible_collections.grafana.grafana
+- grafana.grafana
 '''
 
 EXAMPLES = '''

@@ -66,7 +66,7 @@ options:
     default: False
     type: bool
 extends_documentation_fragment:
-- ansible_collections.grafana.grafana
+- grafana.grafana
 '''
 
 EXAMPLES = '''
