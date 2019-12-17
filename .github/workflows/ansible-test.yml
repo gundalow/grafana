@@ -11,10 +11,10 @@ jobs:
         with:
           path: ansible_collections/gundalow_collections/grafana
 
-      - name: Set up Python 3.6
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.6
+      #- name: Set up Python 3.6
+      #  uses: actions/setup-python@v1
+      #  with:
+      #    python-version: 3.6
 
       - name: Install ansible-minimal
         run: pip install git+https://github.com/ansible-collection-migration/ansible-minimal.git --disable-pip-version-check
@@ -43,25 +43,25 @@ jobs:
 
   integration:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python_version: ["3.6"]
+    #strategy:
+      #matrix:
+      #  python_version: ["3.6"]
     steps:
       - name: Check out code
         uses: actions/checkout@v1
         with:
           path: ansible_collections/gundalow_collections/grafana
 
-      - name: Set up Python ${{ matrix.python_version }}
-        uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python_version }}
+      #- name: Set up Python ${{ matrix.python_version }}
+      #  uses: actions/setup-python@v1
+      #  with:
+      #    python-version: ${{ matrix.python_version }}
 
       - name: Install ansible-minimal
         run: pip install git+https://github.com/ansible-collection-migration/ansible-minimal.git --disable-pip-version-check
 
       - name: Run integration tests on Python ${{ matrix.python_version }}
-        run: ansible-test integration --docker -v --color --retry-on-error --python ${{ matrix.python_version }}
+        run: ansible-test integration --docker -v --color --retry-on-error #--python ${{ matrix.python_version }}
 
 # FIXME FUTURE: If Look if we want to split integration tests into it's own job if they are long running
 # FIXME FUTURE: Other Python Versions
